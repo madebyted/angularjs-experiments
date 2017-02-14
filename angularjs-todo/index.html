@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="simple-todo">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Simple AngularJS todo app</title>
+
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-cookies.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+
+    <body ng-controller="todoList">
+        <header>
+            <h1>Simple AngularJS TODO App</h1>
+            <a href="#"></a>
+
+            <div class="clear"></div>
+        </header>
+
+        <main id="app">
+            <section id="todo-top">
+                <ul class="tasks">
+                    <li ng-repeat="todo in tasks.todo track by $index" ng-click="updateStatus($index)">{{todo}}</li>
+                </ul>
+
+                <div id="add-task">
+                    <input type="text" ng-model="taskText" ng-keypress="addTask($event)" placeholder="Add new task..." />
+                    <button ng-click="addTask()"></button>
+                </div>
+            </section>
+
+            <section id="todo-done">
+                <ul class="tasks">
+                    <li ng-repeat="done in tasks.done track by $index" ng-click="updateStatus($index)">{{done}}</li>
+                </ul>
+            </section>
+        </main>
+
+        <script type="text/javascript" src="app.js"></script>
+    </body>
+</html>

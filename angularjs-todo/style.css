@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700');
+
+@font-face {
+    font-family: MaterialFont;
+    src: url(https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/fonts/Material-Design-Iconic-Font.ttf) format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+.clear:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: '';
+    clear: both;
+    height: 0;
+}
+
+* html .clear             { zoom: 1; } /* IE6 */
+*:first-child+html .clear { zoom: 1; } /* IE7 */
+
+body {
+    margin: 0;
+    padding: 56px 0;
+    background: #e8e8e8;
+}
+
+* {
+    font-family: 'Roboto Slab', serif;
+}
+
+header {
+    margin-bottom: 26px;
+    line-height: 32px;
+}
+
+header h1 {
+    margin: 0;
+    float: left;
+
+    font-size: 24px;
+}
+
+header a {
+    float: right;
+
+    font-size: 32px;
+    text-decoration: none;
+}
+
+header a:after {
+    content: '\f345';
+
+    font-family: 'MaterialFont';
+    color: #5f6f7c;
+}
+
+header a:hover:after {
+    opacity: 0.8;
+}
+
+header,
+#app {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+
+    max-width: 40em;
+}
+
+#todo-top {
+    margin-bottom: 16px;
+
+    background: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),
+                0 3px 1px -2px rgba(0,0,0,0.2),
+                0 1px 5px 0 rgba(0,0,0,0.12);
+}
+
+.tasks {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.tasks li {
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+
+#todo-top .tasks li {
+    padding: 16px 24px;
+    color: #222;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+#todo-top .tasks li:hover {
+    background: #f5f5f5;
+}
+
+#todo-done .tasks li {
+    padding: 8px 24px;
+    text-decoration: line-through;
+    color: #aeaeae;
+}
+
+#add-task {
+    position: relative;
+}
+
+#add-task input {
+    width: 100%;
+    display: block;
+    padding: 16px 24px;
+
+    border: none;
+    box-sizing: border-box;
+}
+
+#add-task button {
+    position: absolute;
+    top: 13px; right: 13px;
+
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    transition: 0.2s all;
+}
+
+#add-task button:hover {
+    opacity: 0.8;
+}
+
+#add-task input:focus,
+#add-task button:focus {
+    outline: none;
+}
+
+#add-task button:after {
+    content: '\f277';
+
+    font-family: 'MaterialFont';
+    font-size: 20px;
+    color: #5f6f7c;
+}
