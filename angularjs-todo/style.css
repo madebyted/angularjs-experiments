@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: MaterialFont;
-    src: url(https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/fonts/Material-Design-Iconic-Font.ttf) format('truetype');
+    src: url(../assets/Material-Design-Iconic-Font.ttf) format('truetype');
     font-weight: 100;
     font-style: normal;
 }
