@@ -23,7 +23,10 @@
         <main id="app">
             <section id="todo-top">
                 <ul class="tasks">
-                    <li ng-repeat="todo in tasks.todo track by $index" ng-click="updateStatus($index)">{{todo}}</li>
+                    <li ng-repeat="todo in tasks.todo track by $index" ng-click="updateStatus($index)">
+                        <button class="delete-task" ng-click="archiveTask($event, $index)"></button>
+                        <span>{{todo}}</span>
+                    </li>
                 </ul>
 
                 <div id="add-task">
@@ -34,7 +37,10 @@
 
             <section id="todo-done">
                 <ul class="tasks">
-                    <li ng-repeat="done in tasks.done track by $index" ng-click="updateStatus($index)">{{done}}</li>
+                    <li ng-repeat="done in tasks.done track by $index" ng-click="updateStatus($index)">
+                        <button class="delete-task" ng-click="archiveTask($event, $index)"></button>
+                        <span>{{done}}</span>
+                    </li>
                 </ul>
             </section>
         </main>

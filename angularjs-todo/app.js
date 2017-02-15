@@ -31,7 +31,32 @@ app.controller('todoList', function($scope, $cookies, $cookieStore) {
             );
         }
 
-        $cookieStore.put('done', $scope.tasks.done.join('|'));
-        $cookieStore.put('todo', $scope.tasks.todo.join('|'));
+        $cookieStore.put(
+            'todo', $scope.tasks.todo.join('|')
+        );
+
+        $cookieStore.put(
+            'done', $scope.tasks.done.join('|')
+        );
+    }
+
+    $scope.archiveTask = function(event, key) {
+        event.stopPropagation();
+
+        if(this.todo) {
+            $scope.tasks.todo.splice(key, 1);
+
+            $cookieStore.put(
+                'todo', $scope.tasks.todo.join('|')
+            );
+        }
+
+        else if(this.done) {
+            $scope.tasks.done.splice(key, 1);
+            
+            $cookieStore.put(
+                'done', $scope.tasks.done.join('|')
+            );
+        }
     }
 });

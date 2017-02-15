@@ -84,9 +84,33 @@ header,
 }
 
 .tasks li {
+    position: relative;
     font-size: 14px;
     cursor: pointer;
     transition: 0.2s all;
+}
+
+.tasks .delete-task {
+    position: absolute;
+    right: 16px;
+
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.tasks .delete-task:after {
+    font-family: 'MaterialFont';
+    font-size: 18px;
+    color: #5f6f7c;
+}
+
+.tasks li:hover .delete-task:after {
+    content: '\f154';
+}
+
+.tasks .delete-task:hover:after {
+    opacity: 0.8;
 }
 
 #todo-top .tasks li {
@@ -134,7 +158,7 @@ header,
 }
 
 #add-task input:focus,
-#add-task button:focus {
+button:focus {
     outline: none;
 }
 
